@@ -11,30 +11,29 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', "ArticulosController@listado");
+
+Route::get('/articulo/{id}', "ArticulosController@Detalle");
+
+Route::get('/agregarArticulo', function (){
+  return view('agregarArticulo');});
+
+Route::post("/agregarArticulo","ArticulosController@Agregar");
+
+Route::post("/borrarArticulo","ArticulosController@borrar");
+
+Route::get('/agregarCategoria', function (){
+  return view('agregarCategoria');});
+
+Route::post("/agregarCategoria","CategoriesController@Agregar");
+
+
+Route::get('/listadocategorias', "CategoriesController@listado");
+
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/about', function () {
+    return view('paginadeabout');});
