@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-         $this->call(UsersTableSeeder::class);
+         //$this->call(UsersTableSeeder::class);
         DB::table("categories")->insert([
           [
             "nombre_categoria"=> "palm",
@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             "nombre_categoria"=> "reproductores",
           ],]
       );
-       //factory(App\articulos::class, 40)->create();
+       factory(App\articulos::class, 40)->create();
 
     }
 }

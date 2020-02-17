@@ -10,4 +10,9 @@ class articulos extends Model
   public $primaryKey = 'id';
   public $timestamps = false;
   public $guarded = [];
+
+public function categoria(){
+
+  return $this->belongsto("App\categories","categoria_id");
+}
 }

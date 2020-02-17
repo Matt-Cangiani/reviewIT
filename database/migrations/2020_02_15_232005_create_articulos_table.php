@@ -23,6 +23,7 @@ class CreateArticulosTable extends Migration
             $table->longtext('article');
             $table->string('descripcion', 140);
             $table->index('created_at');
+            $table->string('fotoarticulo', 150)->nullable();
         });
     }
 

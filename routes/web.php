@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/articuloEditar/{id}', "ArticulosController@Editar");
+Route::post("/GrabarArticulo","ArticulosController@Grabar");
 
 Route::get('/', "ArticulosController@listado");
 
@@ -29,7 +31,7 @@ Route::post("/agregarCategoria","CategoriesController@Agregar");
 
 
 Route::get('/listadocategorias', "CategoriesController@listado");
-
+Route::post("/borrarCategoria","CategoriesController@borrar");
 
 Auth::routes();
 
