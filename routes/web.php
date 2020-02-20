@@ -39,3 +39,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/about', function () {
     return view('paginadeabout');});
+
+
+Route::get('/formato', function() {
+  return view ('formato');
+});

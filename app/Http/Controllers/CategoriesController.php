@@ -38,4 +38,13 @@ class CategoriesController extends Controller
       $categoria= Categories::find($id);
       $categoria->delete();
       return redirect('/listadocategorias');}
+
+      public function devolver(){
+
+        $categories = Categories::all();
+         $share= compact("categories");
+         return $share;
+       }
+
+
 }
