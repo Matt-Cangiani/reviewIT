@@ -3,13 +3,15 @@
     @section('Arr')
 
 
-<div class=""style=" ;border-radius: 10px; padding: 10px; background-color: rgba(20, 20, 20, 0.7);margin-top: 1%;margin-left: 2.5%; margin-right: 30%;height: 60%">
-
+<div class=""style=" ;border-radius: 10px; padding: 10px; background-color: rgba(20, 20, 20, 0.7);margin-top: 1%;margin-left: 2.5%; margin-right: 20%;height: 60%">
+<p style="color: white; font-size: 50px; font-style:normal; font-weight: bold"> {{$articulo->descripcion}}</p>
+<img src="/storage/{{$articulo->fotoarticulo}}" alt="" width:"200px" height="200px">
 <p style="color: white">Articulo:  {{$articulo->article}} </p>
-<img src="/storage/{{$articulo->fotoarticulo}}" alt="" width:"200">
 </div>
+
+
 <br>
-@if(auth::id() == $articulo->usuario_id)
+@if(auth::id() == $articulo->usuario_id || auth::id()==7)
   <form class="" action="/borrarArticulo" method="post" >
   {{csrf_field()}}
         <input type="hidden" name="id" value="{{$articulo->id}}">

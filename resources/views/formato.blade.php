@@ -25,9 +25,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ url('/misArticulos/'. auth::id()) }}">Mis articulos <span class="sr-only">(current)</span></a>
-          </li>
+          @if(auth::id())
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url('/misArticulos/'. auth::id()) }}">Mis articulos <span class="sr-only">(current)</span></a>
+            </li>
+          @endif
+          @if (auth::id()== 7)
+              <a class="btn btn-primary" href="{{ url('/agregarCategoria')}}" role="button">Nueva Categoria</a>
+          @endif
           <li class="nav-item dropdown">
 
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias
@@ -103,7 +108,7 @@
 @yield('Arr')
   </body>
   <!-- Footer -->
-<footer class="page-footer font-small blue pt-4 fixed: bottom" style="background-color: #212529; color: white">
+<footer class="page-footer font-small blue pt-4 fixed" style="background-color: #212529; color: white">
 
   <!-- Footer Links -->
   <div class="container-fluid text-center text-md-left">

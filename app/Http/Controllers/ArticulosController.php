@@ -45,9 +45,10 @@ class ArticulosController extends Controller
       $this->validate($req, $reglas, $mensajes);
 
       $articuloNuevo = new articulos();
+      if($req->hasfile('fotoarticulo')){
       $ruta =  $req->file("fotoarticulo")->store("public");
       $nombreArchivo = basename ($ruta);
-      $articuloNuevo->fotoarticulo = $nombreArchivo;
+      $articuloNuevo->fotoarticulo = $nombreArchivo;}
       $articuloNuevo->descripcion = $req['descripcion'];
       $articuloNuevo->categoria_id =$req['categoria_id'];
       $articuloNuevo->article = $req['Article'];
@@ -80,15 +81,15 @@ class ArticulosController extends Controller
             ];
 
             $this->validate($req, $reglas, $mensajes);
-
-
-
             $articulo = articulos::find($req['id']);
+
+            if($req->hasfile('fotoarticulo')){
+
 
             Storage::delete('public/'.$articulo->fotoarticulo);
             $ruta =  $req->file('fotoarticulo')->store("public");
             $nombreArchivo = basename ($ruta);
-            $articulo->fotoarticulo = $nombreArchivo;
+            $articulo->fotoarticulo = $nombreArchivo;}
             $articulo->descripcion = $req['descripcion'];
             $articulo->categoria_id =$req['categoria_id'];
             $articulo->article = $req['Article'];
