@@ -18,15 +18,15 @@
 
   </head>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark " style="background-color:">
-      <a class="navbar-brand" href="#">ReviewIT</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+      <a class="navbar-brand" href="{{ url('/')}}"><img src="http://pixelartmaker.com/art/375fc3f8bf99b8a.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Listado Principal <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Mis articulos <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias
@@ -40,9 +40,7 @@
 <div id="app">
 
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }}
-            </a>
+
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -89,7 +87,7 @@
         </div>
   </nav>
   </header>
-  <body style="background-color: grey">
+  <body style="background-image: url(https://cdn.suwalls.com/wallpapers/abstract/light-blue-shapes-in-the-middle-of-dark-ones-54635-1920x1080.jpg)">
 @yield('Arr')
   </body>
   <!-- Footer -->
@@ -105,8 +103,8 @@
       <div class="col-md-6 mt-md-0 mt-3">
 
         <!-- Content -->
-        <h5 class="text-uppercase">Footer Content</h5>
-        <p>Here you can use rows and columns to organize your footer content.</p>
+        <h5 class="text-uppercase">ReviewIT 2009</h5>
+        <p>Buy it, use it, reviewIT... </p>
 
       </div>
       <!-- Grid column -->

@@ -1,7 +1,7 @@
 @extends('formato')
 
-@section('Arr')
-<div class="container" style="background-color:  #212529">
+@section('content')
+<div class="container" style="">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
