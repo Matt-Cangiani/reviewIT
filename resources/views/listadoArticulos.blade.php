@@ -4,7 +4,9 @@
 
     @section('Arr')
     <body>
-
+      @if(auth::id())
+        <a class="btn btn-primary" href="{{ url('/agregarArticulo')}}" role="button">Nuevo Articulo</a>
+      @endif
             <div class="" style="">
             @foreach ($articulos as $articulo)
                 <div class="" style="">

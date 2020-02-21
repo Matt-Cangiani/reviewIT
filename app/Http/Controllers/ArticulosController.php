@@ -29,6 +29,7 @@ class ArticulosController extends Controller
       return view("DetalleArticulo", $share);}
 
     public function Agregar(Request $req){
+
       $reglas = [
         "Article" => "string|min:1",
         "descripcion" => "string|min:1",
@@ -53,7 +54,7 @@ class ArticulosController extends Controller
       $articuloNuevo->usuario_id = Auth()->user()->id;
       $articuloNuevo->created_at =date('Y-m-d H:i:s') ;
       $articuloNuevo->save();
-      return redirect('/');}
+      return redirect('/misArticulos/'.auth()->user()->id);}
 
       public function borrar(request $req){
         $id= $req["id"];
