@@ -28,9 +28,9 @@ Route::get('/agregarCategoria', function (){
   return view('agregarCategoria');});
 
 Route::post("/agregarCategoria","CategoriesController@Agregar");
-
-
 Route::get('/listadocategorias', "CategoriesController@listado");
+
+
 Route::post("/borrarCategoria","CategoriesController@borrar");
 
 Auth::routes();
@@ -44,3 +44,7 @@ Route::get('/about', function () {
 Route::get('/formato', function() {
   return view ('formato');
 });
+Route::get('/categoria/{cat}', 'ArticulosController@ChooseCategory');
+
+
+Route::get('/misArticulos/{usuario_vigente}','ArticulosController@misArticulos');

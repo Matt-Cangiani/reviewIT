@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\categories;
 class CategoriesController extends Controller
 {
+
+
+  
   public function listado(){
 
     $categories = Categories::all();

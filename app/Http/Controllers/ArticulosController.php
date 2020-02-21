@@ -7,10 +7,21 @@ use App\articulos;
 
 class ArticulosController extends Controller
 {
+
+
+
+
     public function listado(){
       $articulos = articulos::orderBy("created_at","DESC")->paginate(4);
        $share= compact("articulos");
       return  view("listadoArticulos", $share);}
+
+      public function ChooseCategory($cat){
+        $articulos = articulos::where('categoria_id',"=",$cat)
+->paginate(4);
+
+         $share= compact("articulos");
+        return  view("listadoArticulos", $share);}
 
     public function detalle($id){
       $articulo= articulos::find($id);
@@ -84,5 +95,14 @@ class ArticulosController extends Controller
             return redirect('/');}
 
 
+            public function misArticulos($usuario_vigente){
+          if (auth()->user()->id == $usuario_vigente){
+              $articulos = articulos::where('usuario_id',"=",$usuario_vigente)
+          ->paginate(4);
+               $share= compact("articulos");
+              return  view("listadoArticulos", $share);}
+              else{return view('home');
+              }
 
-}
+          }
+        }

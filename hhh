@@ -1,0 +1,3 @@
+MODELO = singular (Product)
+TABLA = plural (products)
+RUTA = plural
