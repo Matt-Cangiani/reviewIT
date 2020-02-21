@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('formato')
 
-@section('content')
+@section('Arr')
 <div class="container" style="background-color:  #212529">
     <div class="row justify-content-center">
         <div class="col-md-8">

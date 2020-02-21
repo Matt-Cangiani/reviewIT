@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>ReviewIT</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
-  <body style="background-color: yellow">
+@extends('formato')
+
+    @section('Arr')
+  
 <a class="btn btn-primary" href="{{ url('/')}}" role="button">Ya no estoy inspirado</a>
     <ul style="color: red" class="errors">
       @foreach ($errors->all() as $error)
@@ -27,5 +23,4 @@
       <input type="submit" name="" value="Grabar Articulo"></p>
     </form>
 
-  </body>
-</html>
+@endsection

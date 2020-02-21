@@ -39,7 +39,7 @@ class ArticulosController extends Controller
       $articuloNuevo->descripcion = $req['descripcion'];
       $articuloNuevo->categoria_id =$req['categoria_id'];
       $articuloNuevo->article = $req['Article'];
-      $articuloNuevo->usuario_id = 1;
+      $articuloNuevo->usuario_id = Auth()->user()->id;
       $articuloNuevo->created_at =date('Y-m-d H:i:s') ;
       $articuloNuevo->save();
       return redirect('/');}

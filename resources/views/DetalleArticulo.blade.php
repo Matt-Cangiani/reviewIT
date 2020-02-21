@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>ReviewIT</title>
-  </head>
-  <body style="background-image: url(https://static.vecteezy.com/system/resources/previews/000/154/792/non_2x/vector-green-numbers-background-in-matrix-style.jpg)">
+@extends('formato')
+
+    @section('Arr')
     <form class="" action="/borrarArticulo" method="post">
 {{csrf_field()}}
       <input type="hidden" name="id" value="{{$articulo->id}}">
@@ -42,3 +38,4 @@
 
   </div>
 </article>
+@endsection

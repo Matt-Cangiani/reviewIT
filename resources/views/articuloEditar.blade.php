@@ -1,10 +1,7 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>ReviewIT</title>
-  </head>
-  <body style="background-color: white">
+@extends('formato')
+
+
+    @section('Arr')
     <ul style="color: red" class="errors">
       @foreach ($errors->all() as $error)
         <li>
@@ -32,4 +29,4 @@
       <input type="submit" name="" value="Grabar Articulo"></p>
     </form>
   </body>
-</html>
+@endsection
