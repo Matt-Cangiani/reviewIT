@@ -9,7 +9,7 @@
         </li>
       @endforeach
     </ul>
-    <form class="" action="/GrabarArticulo" method="post">
+    <form class="" action="/GrabarArticulo" method="post"enctype="multipart/form-data">
       {{csrf_field()}}
 <p>Introduzca descripcion:</p>
 <input type="hidden" name="id" value="{{$articulo->id}}">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\articulos;
-
+use Illuminate\Support\Facades\Storage;
 class ArticulosController extends Controller
 {
 
@@ -68,6 +68,7 @@ class ArticulosController extends Controller
           return view("articuloEditar", $share);}
 
           public function Grabar(Request $req){
+
             $reglas = [
               "Article" => "string|min:1",
               "descripcion" => "string|min:1"
@@ -81,10 +82,11 @@ class ArticulosController extends Controller
             $this->validate($req, $reglas, $mensajes);
 
 
-              $id= $req["id"];
-            $articulo = articulos::find($id);
 
-            $ruta =  $req->file("fotoarticulo")->store("public");
+            $articulo = articulos::find($req['id']);
+
+            Storage::delete('public/'.$articulo->fotoarticulo);
+            $ruta =  $req->file('fotoarticulo')->store("public");
             $nombreArchivo = basename ($ruta);
             $articulo->fotoarticulo = $nombreArchivo;
             $articulo->descripcion = $req['descripcion'];
@@ -93,7 +95,7 @@ class ArticulosController extends Controller
             $articulo->usuario_id = $req['usuario_id'];
             $articulo->created_at =date('Y-m-d H:i:s') ;
             $articulo->save();
-            return redirect('/');}
+            return redirect('/articuloEditar/'.$req['id']);}
 
 
             public function misArticulos($usuario_vigente){
