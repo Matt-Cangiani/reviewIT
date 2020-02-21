@@ -93,7 +93,7 @@ class ArticulosController extends Controller
             $articulo->descripcion = $req['descripcion'];
             $articulo->categoria_id =$req['categoria_id'];
             $articulo->article = $req['Article'];
-            $articulo->usuario_id = $req['usuario_id'];
+            $articulo->usuario_id =  Auth()->user()->id;
             $articulo->created_at =date('Y-m-d H:i:s') ;
             $articulo->save();
             return redirect('/articuloEditar/'.$req['id']);}

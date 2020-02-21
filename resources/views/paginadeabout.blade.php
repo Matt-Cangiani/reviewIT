@@ -1,7 +1,7 @@
 @extends('formato')
 
     @section('Arr')
-    <div class=""style=" ;border-radius: 10px; color: white;padding: 10px; background-color:rgba(20, 20, 20, 0.7); margin: 2.5% ">
+    <div class=""style=" ;border-radius: 10px; color: white;padding: 10px; background-color:rgba(20, 20, 20, 0.9); margin: 2.5% ">
 
 <p>Biografía
   Ingresó en la Universidad de Harvard en 2003 y formó parte de la fraternidad Alpha Epsilon Pi. Empezó a desarrollar programas como el Coursematch, que permitía a los estudiantes ver la lista de otros compañeros de clase o una web en la que se podía calificar a las estudiantes de la universidad, Facemash.com. Por ello, el Departamento de Servicios Informáticos de Harvard llevó a Zuckerberg ante la administración con cargos de infracción de la seguridad informática y violación de las políticas de privacidad y de propiedad intelectual.4​

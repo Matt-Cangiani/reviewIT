@@ -1,6 +1,7 @@
 @extends('formato')
 
     @section('Arr')
+      <div class=""style=" ;border-radius: 10px; color: white;padding: 10px; background-color:rgba(20, 20, 20, 0.9); margin: 2.5% ">
 
     <ul style="color: red" class="errors">
       @foreach ($errors->all() as $error)
@@ -16,4 +17,5 @@
 
       <input type="submit" name="" value="Grabar Categoria"></p>
     </form>
+  </div>
 @endsection

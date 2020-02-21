@@ -31,8 +31,17 @@
             </li>
           @endif
           @if (auth::id()== 7)
-              <a class="btn btn-primary" href="{{ url('/agregarCategoria')}}" role="button">Nueva Categoria</a>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url('/agregarCategoria')}}">Nueva Categoria <span class="sr-only">(current)</span></a>
+            </li>
           @endif
+          @if(auth::id())
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url('/agregarArticulo')}}">Nuevo Articulo <span class="sr-only">(current)</span></a>
+            </li>
+          @endif
+            <a class="nav-link" href="{{ url('/about')}}">Historia de el sitio <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item dropdown">
 
             <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias
@@ -104,7 +113,7 @@
         </div>
   </nav>
   </header>
-  <body style="background-image: url(https://cdn.suwalls.com/wallpapers/abstract/light-blue-shapes-in-the-middle-of-dark-ones-54635-1920x1080.jpg)">
+  <body style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/017/005/185/large/alex-korneev-dsdsfdfgdf.jpg?1554290007)">
 @yield('Arr')
   </body>
   <!-- Footer -->
@@ -153,7 +162,6 @@
   </div>
   <!-- Footer Links -->
 
-  <a class="btn btn-primary" href="{{ url('/about')}}" role="button">Historia de la pagina</a>
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:

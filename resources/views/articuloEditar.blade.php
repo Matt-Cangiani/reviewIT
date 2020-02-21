@@ -9,12 +9,12 @@
         </li>
       @endforeach
     </ul>
-    <div class=""style=" ;border-radius: 10px; color: white;padding: 10px; background-color:rgba(20, 20, 20, 0.7); margin: 2.5% ">
+    <div class=""style=" ;border-radius: 10px; color: white;padding: 10px; background-color:rgba(20, 20, 20, 0.9); margin: 2.5% ">
     <form class="" action="/GrabarArticulo" method="post"enctype="multipart/form-data">
       {{csrf_field()}}
 <p>Introduzca descripcion:</p>
 <input type="hidden" name="id" value="{{$articulo->id}}">
-<input type="hidden" name="usuario_id" value="{{$articulo->usuario_id}}">
+
       <textarea name="descripcion" rows="1" cols="80">{{$articulo->descripcion}}</textarea>
       <p>Introduzca Categoria:</p>
       <select class="" name="categoria_id">
