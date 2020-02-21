@@ -83,9 +83,9 @@ class ArticulosController extends Controller
               $id= $req["id"];
             $articulo = articulos::find($id);
 
-            //$ruta =  $req->file("fotoarticulo")->store("public");
-          //  $nombreArchivo = basename ($ruta);
-            //$articulo->fotoarticulo = $nombreArchivo;
+            $ruta =  $req->file("fotoarticulo")->store("public");
+            $nombreArchivo = basename ($ruta);
+            $articulo->fotoarticulo = $nombreArchivo;
             $articulo->descripcion = $req['descripcion'];
             $articulo->categoria_id =$req['categoria_id'];
             $articulo->article = $req['Article'];
@@ -98,6 +98,7 @@ class ArticulosController extends Controller
             public function misArticulos($usuario_vigente){
           if (auth()->user()->id == $usuario_vigente){
               $articulos = articulos::where('usuario_id',"=",$usuario_vigente)
+              ->orderBy("created_at", 'DESC')
           ->paginate(4);
                $share= compact("articulos");
               return  view("listadoArticulos", $share);}

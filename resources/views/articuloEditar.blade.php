@@ -17,7 +17,7 @@
       <textarea name="descripcion" rows="1" cols="80">{{$articulo->descripcion}}</textarea>
       <p>Introduzca Categoria:</p><textarea name="categoria_id" rows="1" cols="80">{{$articulo->categoria_id}}</textarea>
 <p>Contenido del articulo:</p>
-    <p><textarea name="Article" rows="25" cols="80">{{$articulo->article}}</textarea></p>
+    <p></textarea></p>
 <p><input type="file" name="fotoarticulo" value="agregar Foto">
 
   <img src="/storage/{{$articulo->fotoarticulo}}" alt="200px">
